@@ -1,5 +1,5 @@
 html {
-    background: linear-gradient(200deg, rgb(138, 249, 199), rgb(87, 228, 249));
+    background: linear-gradient(200deg, rgb(233, 210, 8), rgb(7, 53, 139));
     background-size: 600% 600%;
     background-attachment: fixed;
     height: 100%;
@@ -37,8 +37,8 @@ html * {
 button {
     background-color: white;
     border-radius: 0px 5px 5px 0px;
-    border: 1px solid rgb(40, 160, 230);
-    color: rgb(40, 160, 230);
+    border: 1px solid rgb(231, 108, 27);
+    color: rgb(145, 40, 230);
     padding: 10px 20px;
     text-align: center;
     display: inline-block;
@@ -46,7 +46,7 @@ button {
 }
 
 .activated {
-    background-color: rgb(40, 160, 230);
+    background-color: rgb(40, 230, 40);
     border-radius: 0px 5px 5px 0px;
     border: 1px solid;
     color: white;
