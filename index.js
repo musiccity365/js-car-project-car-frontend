@@ -1,5 +1,7 @@
-// test that we can get data from the backend
-const BACKEND_URL = 'localhost:3000';
-fetch(`${BACKEND_URL}/test`)
-    .then(response => response.json())
-    .then(parsedResponse => console.log(parsedResponse));
+const baseURL = 'http://localhost:3000'
+const carsURL = baseURL + '/cars'
+
+const list = document.getElementById("car-list")
+
+const form = document.getElementById("car-form")
+const
