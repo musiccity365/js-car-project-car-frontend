@@ -24,7 +24,8 @@
         <input type="text" name="make" id="car-make"><br><br>
         <label for="car-model">Model:</label>
         <input type="text" name="model" id="car-model"><br><br>
-        <label for="car-year">Year:</label> Note: find a good input attribute-type for this one
+        <label for="car-year">Year:</label>
+        <select id="ddlYears" name="ddlYears"></select><br><br>
         <label for="car-mileage">Mileage:</label>
         <input type="number" name="mileage" id="mileage" min="0" max="999999"><br><br>
 
@@ -32,8 +33,26 @@
         <label for="origin-dropdown">Manufacturer Origin:</label>
         <select name="origin_id" id="origin-dropdown">
         </select><br><br>
-    </form>
 
+        <input type="submit" value="Create">
+    </form>
+    <script type="text/javascript">
+        window.onload = function() {
+            //Reference the DropDownList.
+            let ddlYears = document.getElementById("ddlYears");
+
+            //Determine the Current Year.
+            let currentYear = (new Date()).getFullYear();
+
+            //Loop and add the Year values to DropDownList.
+            for (let i = 1900; i <= currentYear; i++) {
+                let option = document.createElement("OPTION");
+                option.innerHTML = i;
+                option.value = i;
+                ddlYears.appendChild(option);
+            }
+        };
+    </script>
 
     <script type="application/javascript" src="src/origin.js" charset="UTF-8">
     </script>
