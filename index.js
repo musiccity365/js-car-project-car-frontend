@@ -5,3 +5,4 @@ const list = document.getElementById("car-list")
 
 const form = document.getElementById("car-form")
 const makeInput = document.getElementById("car-make")
+const modelInput = document.getElementById("car-model")
