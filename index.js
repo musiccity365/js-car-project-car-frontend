@@ -4,4 +4,4 @@ const carsURL = baseURL + '/cars'
 const list = document.getElementById("car-list")
 
 const form = document.getElementById("car-form")
-const
+const makeInput = document.getElementById("car-make")
