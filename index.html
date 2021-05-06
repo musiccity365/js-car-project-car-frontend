@@ -10,7 +10,7 @@
 <body>
     <h1>Michael's Hooptie Fleet</h1>
 
-    <!-- New View-->
+    <!-- Select New View-->
     <h2>Filter by Manufacture Origin</h2>
     <div id="origin-container"></div>
 
@@ -24,13 +24,23 @@
         <input type="text" name="make" id="car-make"><br><br>
         <label for="car-model">Model:</label>
         <input type="text" name="model" id="car-model"><br><br>
+        <label for="car-year">Year:</label> Note: find a good input attribute-type for this one
+        <label for="car-mileage">Mileage:</label>
+        <input type="number" name="mileage" id="mileage" min="0" max="999999"><br><br>
+
+        <!-- Select New Car Origin -->
+        <label for="origin-dropdown">Manufacturer Origin:</label>
+        <select name="origin_id" id="origin-dropdown">
+        </select><br><br>
     </form>
+
+
     <script type="application/javascript" src="src/origin.js" charset="UTF-8">
     </script>
     <script type="application/javascript" src="src/originApi.js" charset="UTF-8"></script>
     <script type="application/javascript" src="src/car.js" charset="UTF-8"></script>
     <script type="application/javascript" src="src/carApi.js" charset="UTF-8"></script>
-    <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
+    <script type="application/javascript" src="index.js" charset="UTF-8"></script>
 </body>
 
 </html>
