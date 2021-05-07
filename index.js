@@ -19,7 +19,7 @@ form.addEventListener('submit', handleFormSubmit)
 function handleFormSubmit(e) {
     e.preventDefault()
 
-    Car.Api.createCar()
+    CarApi.createCar()
     form.reset()
 }
 //callback function for cars list
