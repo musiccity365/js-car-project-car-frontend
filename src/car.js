@@ -20,10 +20,15 @@ class Car {
         this.mileage = mileage
         this.originID = originID
 
+        this.element = document.createElement('li')
+        this.element.id = `car-${id}`
+        this.element.dataset.id = id
+
         this.element.addEventListener('click', this.handleCarClick)
 
         Car.all.push(this)
     }
+
 
     renderLi() {
         this.element.innerHTML = `
@@ -38,4 +43,11 @@ class Car {
     `
         return this.element
     }
+
+    attachToDom() {
+            list.appendChild(this.renderLi())
+        }
+        // Add a NEW car to the list
+
+
 }
