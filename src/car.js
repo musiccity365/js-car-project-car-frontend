@@ -25,14 +25,17 @@ class Car {
         Car.all.push(this)
     }
 
-    render() {
+    renderLi() {
         this.element.innerHTML = `
         <div data-id="${this.id}">
             $<strong class="make">${this.make}</strong>
-            $<span class="model">${this.model}</span>
-            $<span class="year">${this.year}</span>
-            $<span class="mileage">${this.mileage}</span>
-        `
+            <span class="model">${this.model}</span>
+            <span class="year">${this.year}</span>
+            <span class="mileage">${this.mileage}</span>
+        </div>
+        <button class="edit" data-id="${this.id}">Edit</button>
+        <button class="delete" data-id="${this.id}">Delete</button>
+    `
         return this.element
     }
 }
