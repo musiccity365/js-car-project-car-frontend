@@ -5,14 +5,7 @@ class Car {
     // NEW CONTAINER FOR CAR-LIST
     static container = document.getElementById('car-list')
 
-    constructor({
-        id,
-        make,
-        model,
-        year,
-        mileage,
-        originID
-    }) {
+    constructor({ id, make, model, year, mileage, originID }) {
         this.id = id
         this.make = make
         this.model = model
