@@ -3,7 +3,7 @@ class Origin {
 
     static originContainer = document.getElementById('origin-container')
 
-    constructor() {
+    constructor({ id, name }) { // destructuring
         this.id = id
         this.name = name
         this.active = false
@@ -32,11 +32,12 @@ class Origin {
         this.element.addEventListener('click', this.setActiveOrigin)
     }
 
-    setActiveOrigin(e) {
+    setActiveOrigin = (e) => {
         let filteredOrigin
 
-        Origin.all.forEach(o => {
+        Origin.all.forEach(o => { // use arrow function here
             if (o.element === this.element && !this.active) {
+                // debugger
                 o.element.classList.add('active')
                 o.active = true
                 filteredOrigin = o
