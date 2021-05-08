@@ -12,8 +12,9 @@ class CarApi {
                 })
             })
     }
-    App({
 
-    })
+    static createCar() {
+
+    }
 
 }
