@@ -5,7 +5,7 @@ class Car {
     // NEW CONTAINER FOR CAR-LIST
     static container = document.getElementById('car-list')
 
-    constructor({ id, make, model, year, mileage, originID }) {
+    constructor({ id, make, model, year, mileage, originID }) { //use ES6 - destructuring to take values out of object and immediately assign them to variables
         this.id = id
         this.make = make
         this.model = model

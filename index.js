@@ -23,7 +23,7 @@ function handleFormSubmit(e) {
     form.reset()
 }
 //callback function for cars list
-// CarApi.getCars()
+CarApi.getCars()
 
 //callback function for origins list
 // OriginApi.getOrigins()
