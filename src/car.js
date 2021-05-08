@@ -5,7 +5,7 @@ class Car {
     // NEW CONTAINER FOR CAR-LIST
     static container = document.getElementById('car-list')
 
-    constructor({ id, make, model, year, mileage, originID }) { //use ES6 - destructuring to take values out of object and immediately assign them to variables
+    constructor({ id, make, model, year, mileage, originID }) { //use ES6 - destructuring to take actions out of object and immediately assign them to variables
         this.id = id
         this.make = make
         this.model = model
@@ -22,7 +22,22 @@ class Car {
         Car.all.push(this)
     }
 
-
+    handleCarClick = (e) => {
+        let action = e.target.innerText
+        switch (action) {
+            case action === "Edit":
+                this.createEditFields(e.target)
+                e.target.innerText = "Save"
+                break
+            case action === "Delete":
+                this.deleteCar(e)
+                break
+            case action === "Save":
+                this.saveUpdatedCar()
+                e.target.innerText = "Edit"
+                break
+        }
+    }
     renderLi() {
         this.element.innerHTML = `
         <div data-id="${this.id}">
@@ -56,12 +71,20 @@ class Car {
     static filterByOrigin(filteredOrigin) {
 
         if (filteredOrigin) {
-            const filteredCars = Car.all.filter((car) => {
-                return car.originID === parseInt(filteredOrigin.id) //convert (filteredOrigin.id) data type to match foreign key attribute (car.originID) to in order to prevent errors when comparing the attribute values. In this case, we use parseInt(filteredOrigin.id) to convert the filteredOrigin.id data type from string to integer
-            })
-        } else {
+            for (const car of Car.all) {
+                //convert (filteredOrigin.id) data type to match foreign key attribute (car.originID) to in order to prevent errors when comparing the attribute actions. In this case, we use parseInt(filteredOrigin.id) to convert the filteredOrigin.id data type from string to integer
+                if (car.originID === parseInt(filteredOrigin.id)) {
+                    car.element.style.display = ""
+                } else {
+                    car.element.style.display = "none"
+                }
+            }
 
+        } else {
+            Car.container.innerHTML = '' //use this to remove all cars from the DOM, to prevent duplicate entries.
+            for (const car of Car.all) {
+                car.attachToDom()
+            }
         }
-        Car.container.innerHTML = '' //use this to remove all cars from the DOM, to prevent duplicate entries.
     }
 }
