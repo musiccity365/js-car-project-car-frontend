@@ -26,4 +26,4 @@ function handleFormSubmit(e) {
 CarApi.getCars()
 
 //callback function for origins list
-// OriginApi.getOrigins()
+OriginApi.getOrigins()

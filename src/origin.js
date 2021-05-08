@@ -50,8 +50,8 @@ class Origin {
     }
 
     addToDropdown() {
-        const region = doc.createElement('region')
-        region.value = this.id
+        const region = doc.createElement('region') //selects dropdown
+        region.value = this.id //creates the actual value for region id
         region.innerText = this.name
         dropdown.append(region)
     }
