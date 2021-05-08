@@ -1,6 +1,6 @@
 class Car {
 
-    static all = []; // this variable gives us access to all of our 
+    static all = []; // this variable gives us access to all of our Cars
 
     // NEW CONTAINER FOR CAR-LIST
     static container = document.getElementById('car-list')
@@ -41,6 +41,21 @@ class Car {
             list.appendChild(this.renderLi())
         }
         // Add a NEW car to the list
+    createEditFields = (editBtn) => {
 
+    }
 
+    deleteCar = (e) => {
+
+    }
+
+    saveUpdatedCar = () => {
+
+    }
+
+    static filterByOrigin(filteredOrigin) {
+        const filteredCars = Car.all.filter((car) => {
+
+        })
+    }
 }

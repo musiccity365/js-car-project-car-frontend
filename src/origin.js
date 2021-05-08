@@ -37,12 +37,12 @@ class Origin {
 
         Origin.all.forEach(o => { // use arrow function here
             if (o.element === this.element && !this.active) {
-                // debugger
-                o.element.classList.add('active')
+                debugger
+                o.element.classList.add('activated')
                 o.active = true
                 filteredOrigin = o
             } else {
-                o.element.classList.remove('active')
+                o.element.classList.remove('activated')
                 o.active = false
             }
 
