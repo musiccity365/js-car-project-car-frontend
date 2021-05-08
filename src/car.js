@@ -54,8 +54,14 @@ class Car {
     }
 
     static filterByOrigin(filteredOrigin) {
-        const filteredCars = Car.all.filter((car) => {
 
-        })
+        if (filteredOrigin) {
+            const filteredCars = Car.all.filter((car) => {
+                return car.originID === parseInt(filteredOrigin.id) //convert (filteredOrigin.id) data type to match foreign key attribute (car.originID) to in order to prevent errors when comparing the attribute values. In this case, we use parseInt(filteredOrigin.id) to convert the filteredOrigin.id data type from string to integer
+            })
+        } else {
+
+        }
+        Car.container.innerHTML = '' //use this to remove all cars from the DOM, to prevent duplicate entries.
     }
 }
