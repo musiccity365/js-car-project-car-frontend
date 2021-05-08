@@ -1,6 +1,6 @@
 class Car {
 
-    static all = [];
+    static all = []; // this variable gives us access to all of our 
 
     // NEW CONTAINER FOR CAR-LIST
     static container = document.getElementById('car-list')
