@@ -83,7 +83,12 @@ class Car {
     }
 
     saveUpdatedCar = () => {
+        this.make = this.element.querySelector("edit-make").value
+        this.model = this.element.querySelector("edit-model").value
+        this.year = this.element.querySelector("edit-year").value
+        this.mileage = this.element.querySelector("edit-mileage").value
 
+        CarApi.
     }
 
     static filterByOrigin(filteredOrigin) {
