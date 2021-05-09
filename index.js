@@ -6,7 +6,7 @@ const list = document.getElementById("car-list")
 const form = document.getElementById("car-form")
 const makeInput = document.getElementById("car-make")
 const modelInput = document.getElementById("car-model")
-const carDropdown = document.getElementById("car-dropdown")
+const milesInput = document.getElementById("car-miles")
 const yearInput = document.getElementById("car-year")
 
 

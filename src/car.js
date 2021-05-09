@@ -88,7 +88,7 @@ class Car {
         this.year = this.element.querySelector("edit-year").value
         this.mileage = this.element.querySelector("edit-mileage").value
 
-        CarApi.sendPatch(this) // move fetch to CarApi to maintain consistency
+        CarApi.sendPatch(this)
     }
 
     static filterByOrigin(filteredOrigin) {
@@ -104,8 +104,9 @@ class Car {
             }
 
         } else {
+            Car.container.innerHTML = '' //use this to remove all cars from the DOM, to prevent duplicate entries.
             for (const car of Car.all) {
-                car.element.style.display = "" //use this to remove all cars from the DOM, to prevent duplicate entries.
+                car.attachToDom()
             }
         }
     }
