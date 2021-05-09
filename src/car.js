@@ -37,6 +37,7 @@ class Car {
                 e.target.innerText = "Edit"
                 break
         }
+
     }
     renderLi() {
         this.element.innerHTML = `
@@ -57,11 +58,28 @@ class Car {
         }
         // Add a NEW car to the list
     createEditFields = (editBtn) => {
+        //access the object element
+        const li = this.element
+        const div = this.element.querySelector('div')
 
+        // grab the values inside of car object and render them to input fields
+        const make = li.querySelector('.make').innerText
+        const model = li.querySelector('.model').innerText
+        const year = li.querySelector('.year').innerText
+        const mileage = li.querySelector('.mileage').innerText
+
+        //update html and interpolate values 
+        div.innerHTML = `
+        <input type="text" name="make" class="edit-make" value="${make}">
+        <input type="text" name="model" class="edit-model" value="${model}">
+        <input type="number" name="year" class="edit-year" value="${year}">
+        <input type="number" name="mileage" class="edit-mileage" min="0" max="999999" value="${mileage}">
+        `
     }
 
     deleteCar = (e) => {
-
+        this.element.remove() //occurs before fetch request
+        CarApi.deleteCar(this.id) //move fetch to CarApi to prevent it from being separated
     }
 
     saveUpdatedCar = () => {
