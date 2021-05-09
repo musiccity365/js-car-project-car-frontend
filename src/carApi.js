@@ -3,10 +3,10 @@ class CarApi {
     static baseURL = 'http://localhost:3000/cars'
 
     static getCars() {
-        debugger
         fetch(this.baseURL)
             .then(response => response.json())
             .then(data => {
+                debugger
                 data["data"].forEach(car => {
                     const c = new Car({ id: car.id, ...car.attributes }) //destructuring
                     c.attachToDom()
