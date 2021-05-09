@@ -7,14 +7,19 @@ class CarApi {
             .then(response => response.json())
             .then(data => {
                 data["data"].forEach(car => {
-                    const c = new Car({ id: car.id, ...car.attributes }); //destructuring
+                    const c = new Car({ id: car.id, ...car.attributes }) //destructuring
                     c.attachToDom()
                 })
             })
     }
 
     static createCar() {
-
+        const formData = {
+            make: makeInput.value,
+            model: modelInput.value,
+            year: yearDropdown.value,
+            origin_id: dropdown.value
+        }
     }
 
 }
