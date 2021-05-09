@@ -8,13 +8,7 @@ class CarApi {
             .then(data => {
                 // debugger
                 Car.all.forEach(car => {
-                    const c = new Car({
-                        id: car.id,
-                        make: car.attributes.make,
-                        model: car.attributes.model,
-                        year: car.attributes.year,
-                        mileage: car.attributes.mileage
-                    })
+                    const c = new Car(make: car.make, model: car.model, year: car.year, mileage: car.mileage)
                     c.attachToDom()
                 })
             })
