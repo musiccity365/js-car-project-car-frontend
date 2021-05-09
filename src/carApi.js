@@ -7,8 +7,14 @@ class CarApi {
             .then(response => response.json())
             .then(data => {
                 debugger
-                data["data"].forEach(car => {
-                    const c = new Car({ id: car.id, ...car.attributes }) //destructuring
+                Car.all.forEach(car => {
+                    const c = new Car({
+                        id: car.id,
+                        make: car.attributes.make,
+                        model: car.attributes.model,
+                        year: car.attributes.year,
+                        mileage: car.attributes.mileage
+                    })
                     c.attachToDom()
                 })
             })
