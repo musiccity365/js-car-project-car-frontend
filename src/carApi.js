@@ -6,7 +6,7 @@ class CarApi {
         fetch(this.baseURL)
             .then(response => response.json())
             .then(data => {
-                debugger
+                // debugger
                 Car.all.forEach(car => {
                     const c = new Car({
                         id: car.id,
