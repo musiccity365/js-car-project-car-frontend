@@ -78,8 +78,8 @@ class Car {
     }
 
     deleteCar = (e) => {
-        this.element.remove() //occurs before fetch request
-        CarApi.deleteCar(this.id) //move fetch to CarApi to prevent it from being separated
+        this.element.remove() // occurs before fetch request
+        CarApi.deleteCar(this.id) // move fetch to CarApi to maintain consistency
     }
 
     saveUpdatedCar = () => {
@@ -88,7 +88,7 @@ class Car {
         this.year = this.element.querySelector("edit-year").value
         this.mileage = this.element.querySelector("edit-mileage").value
 
-        CarApi.
+        CarApi.sendPatch(this) // move fetch to CarApi to maintain consistency
     }
 
     static filterByOrigin(filteredOrigin) {
@@ -104,9 +104,8 @@ class Car {
             }
 
         } else {
-            Car.container.innerHTML = '' //use this to remove all cars from the DOM, to prevent duplicate entries.
             for (const car of Car.all) {
-                car.attachToDom()
+                car.element.style.display = "" //use this to remove all cars from the DOM, to prevent duplicate entries.
             }
         }
     }
