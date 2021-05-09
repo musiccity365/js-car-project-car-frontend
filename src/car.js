@@ -5,12 +5,12 @@ class Car {
     // NEW CONTAINER FOR CAR-LIST
     static container = document.getElementById('car-list')
 
-    constructor({ id, make, model, year, mileage, originID }) { //use ES6 - destructuring to take actions out of object and immediately assign them to variables
+    constructor(id, make, model, year, miles, originID) { //use ES6 - destructuring to take actions out of object and immediately assign them to variables
         this.id = id
         this.make = make
         this.model = model
         this.year = year
-        this.mileage = mileage
+        this.miles = miles
         this.originID = originID
 
         this.element = document.createElement('li')
@@ -45,7 +45,7 @@ class Car {
             $<strong class="make">${this.make}</strong>
             <span class="model">${this.model}</span>
             <span class="year">${this.year}</span>
-            <span class="mileage">${this.mileage}</span>
+            <span class="miles">${this.miles}</span>
         </div>
         <button class="edit" data-id="${this.id}">Edit</button>
         <button class="delete" data-id="${this.id}">Delete</button>
@@ -66,14 +66,14 @@ class Car {
         const make = li.querySelector('.make').innerText
         const model = li.querySelector('.model').innerText
         const year = li.querySelector('.year').innerText
-        const mileage = li.querySelector('.mileage').innerText
+        const miles = li.querySelector('.miles').innerText
 
         //update html and interpolate values 
         div.innerHTML = `
         <input type="text" name="make" class="edit-make" value="${make}">
         <input type="text" name="model" class="edit-model" value="${model}">
         <input type="number" name="year" class="edit-year" value="${year}">
-        <input type="number" name="mileage" class="edit-mileage" min="0" max="999999" value="${mileage}">
+        <input type="number" name="miles" class="edit-miles" min="0" max="999999" value="${miles}">
         `
     }
 
@@ -86,7 +86,7 @@ class Car {
         this.make = this.element.querySelector("edit-make").value
         this.model = this.element.querySelector("edit-model").value
         this.year = this.element.querySelector("edit-year").value
-        this.mileage = this.element.querySelector("edit-mileage").value
+        this.miles = this.element.querySelector("edit-miles").value
 
         CarApi.sendPatch(this)
     }

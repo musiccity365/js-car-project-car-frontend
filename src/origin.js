@@ -3,7 +3,7 @@ class Origin {
 
     static originContainer = document.getElementById('origin-container')
 
-    constructor({ id, name }) { // destructuring
+    constructor(id, name) {
         this.id = id
         this.name = name
         this.active = false
