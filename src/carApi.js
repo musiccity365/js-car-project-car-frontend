@@ -18,6 +18,7 @@ class CarApi {
         const formData = {
             make: makeInput.value,
             model: modelInput.value,
+            color: colorInput.value,
             year: yearDropdown.value,
             origin_id: dropdown.value
         }

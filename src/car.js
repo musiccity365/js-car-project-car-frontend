@@ -22,23 +22,7 @@ class Car {
         Car.all.push(this)
     }
 
-    handleCarClick = (e) => {
-        let action = e.target.innerText
-        switch (action) {
-            case action === "Edit":
-                this.createEditFields(e.target)
-                e.target.innerText = "Save"
-                break
-            case action === "Delete":
-                this.deleteCar(e)
-                break
-            case action === "Save":
-                this.saveUpdatedCar()
-                e.target.innerText = "Edit"
-                break
-        }
 
-    }
     renderLi() {
         this.element.innerHTML = `
         <div data-id="${this.id}">
@@ -57,39 +41,7 @@ class Car {
             list.appendChild(this.renderLi())
         }
         // Add a NEW car to the list
-    createEditFields = (editBtn) => {
-        //access the object element
-        const li = this.element
-        const div = this.element.querySelector('div')
 
-        // grab the values inside of car object and render them to input fields
-        const make = li.querySelector('.make').innerText
-        const model = li.querySelector('.model').innerText
-        const year = li.querySelector('.year').innerText
-        const miles = li.querySelector('.miles').innerText
-
-        //update html and interpolate values 
-        div.innerHTML = `
-        <input type="text" name="make" class="edit-make" value="${make}">
-        <input type="text" name="model" class="edit-model" value="${model}">
-        <input type="number" name="year" class="edit-year" value="${year}">
-        <input type="number" name="miles" class="edit-miles" min="0" max="999999" value="${miles}">
-        `
-    }
-
-    deleteCar = (e) => {
-        this.element.remove() // occurs before fetch request
-        CarApi.deleteCar(this.id) // move fetch to CarApi to maintain consistency
-    }
-
-    saveUpdatedCar = () => {
-        this.make = this.element.querySelector("edit-make").value
-        this.model = this.element.querySelector("edit-model").value
-        this.year = this.element.querySelector("edit-year").value
-        this.miles = this.element.querySelector("edit-miles").value
-
-        CarApi.sendPatch(this)
-    }
 
     static filterByOrigin(filteredOrigin) {
 
